@@ -1,14 +1,10 @@
 # Flight Ranking System
 
-## Overview
-
-The Flight Ranking System is a web application that generates optimized flight recommendations based on user and enterprise preferences. The system dynamically balances these preferences using a sophisticated multi-factor ranking algorithm, making it adaptable to changing priorities.
-
 ## Key Features
 
 - **Dynamic Weighting System**: Balances user and enterprise preferences with real-time adjustability.
 - **Multi-Criteria Decision Analysis (MCDA)**: Scores flights based on a combination of user, enterprise, and inventory preferences.
-- **Interactive Frontend**: Built with React, the frontend allows users to input flight preferences and see top recommendations.
+- **Interactive Frontend**: Built with React(thanks to GPT4o), the frontend allows users to input flight preferences and see top recommendations.
 
 ## How It Works
 
