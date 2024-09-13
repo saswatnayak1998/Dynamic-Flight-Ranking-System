@@ -45,22 +45,23 @@ The Flight Ranking System is a web application that generates optimized flight r
 
 ### 1. User Preference Score Calculation
 
-- **Departure Time**: Flights closer to the preferred time receive higher scores. For instance, if the preferred time is 7:00 PM, a flight at 6:30 PM will score `(240 - 30) / 240`.
-- **Arrival Time**: Similar to departure time, flights arriving closer to the preferred arrival time receive higher scores.
-- **Preferred Airline**: A score of `1` is given if the flight matches the user's preferred airline, otherwise `0`.
-- **Cabin Class**: A score of `1` is given if the cabin class matches the user's preference, otherwise `0`.
-- **Final**: The final score is divided by
+- **Departure Time Score**: Flights closer to the preferred time receive higher scores. For instance, if the preferred time is 7:00 PM, a flight at 6:30 PM will score `(240 - 30) / 240`.
+- **Arrival Time Score**: Similar to departure time, flights arriving closer to the preferred arrival time receive higher scores.
+- **Preferred Airline Score**: A score of `1` is given if the flight matches the user's preferred airline, otherwise `0`.
+- **Cabin Class Score**: A score of `1` is given if the cabin class matches the user's preference, otherwise `0`.
+- **Final**: The final score is divided by 4 as the maximum of all scores(added up) is 4. This is done for normalization.
 
 ### 2. Enterprise Preference Score Calculation
 
-- **Preferred Airline**: Enterprise preferences are considered by giving a score of `1` if the airline matches the enterprise's preferred airline.
-- **Price Optimization**: Lower-priced flights score higher. The score is calculated as `(max_price - flight_price) / (max_price - min_price)`.
+- **Preferred Airline Score**: Enterprise preferences are considered by giving a score of `1` if the airline matches the enterprise's preferred airline.
+- **Price Optimization Score**: Lower-priced flights score higher. The score is calculated as `(max_price - flight_price) / (max_price - min_price)`.
+- **Final**: The final score is divided by 2 as the maximum of all scores(added up) is 2. This is done for normalization.
 
 ### 3. Inventory Score
 
 - The inventory score is currently set to `0` but can be adjusted in the future to factor in inventory-based optimizations.
 
-## Frontend (React)
+## Frontend (React)- Thanks to Chat GPT: I was able to somehow tweak it and make it work
 
 The React frontend provides a user-friendly interface to input preferences and displays the top flight recommendations based on the calculated scores.
 
