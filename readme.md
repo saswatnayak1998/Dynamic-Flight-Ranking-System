@@ -18,6 +18,12 @@
 1. **Input Processing**:
 
    - The schema is ![Database Schema](schema.png)
+   - After getting inputs from the user, I join the Flights with other tables based on:
+
+     - I filter on the depart date.
+     - I take a buffer of +- 2 hours from the time of depart to find more flights around the depart time that the user has inputted.
+     - I only filter on flights which have the same origin and destination as the user input(Cannot compromise on this).
+     - I join all the tables based on the above constraints.
 
    - The backend receives user and enterprise preferences, along with weights for each scoring category.
    - The weights determine the importance of each preference in the overall ranking.
