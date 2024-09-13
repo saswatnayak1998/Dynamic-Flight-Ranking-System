@@ -49,6 +49,7 @@ The Flight Ranking System is a web application that generates optimized flight r
 - **Arrival Time**: Similar to departure time, flights arriving closer to the preferred arrival time receive higher scores.
 - **Preferred Airline**: A score of `1` is given if the flight matches the user's preferred airline, otherwise `0`.
 - **Cabin Class**: A score of `1` is given if the cabin class matches the user's preference, otherwise `0`.
+- **Final**: The final score is divided by
 
 ### 2. Enterprise Preference Score Calculation
 
