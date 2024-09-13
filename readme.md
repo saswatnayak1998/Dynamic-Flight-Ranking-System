@@ -80,7 +80,15 @@ The React frontend provides a user-friendly interface to input preferences and d
 
 ### How to Run the Application
 
-1. **Backend**:
+1. **Data Generation**:
+
+   - Geenrate data, store it in a csv file and then populate the schema(MySQL):
+
+   ```bash
+   python data/data_generator.py
+   ```
+
+2. **Backend**:
 
    - Ensure MySQL is running with the appropriate schema set up.
    - Run the Flask backend:
@@ -88,7 +96,7 @@ The React frontend provides a user-friendly interface to input preferences and d
      python backend.py
      ```
 
-2. **Frontend**:
+3. **Frontend**:
    - Navigate to the frontend directory and start the React app:
      ```bash
      npm start
