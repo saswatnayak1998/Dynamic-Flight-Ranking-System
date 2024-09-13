@@ -17,6 +17,8 @@
 
 1. **Input Processing**:
 
+   - The schema is ![Database Schema](schema.png)
+
    - The backend receives user and enterprise preferences, along with weights for each scoring category.
    - The weights determine the importance of each preference in the overall ranking.
 
