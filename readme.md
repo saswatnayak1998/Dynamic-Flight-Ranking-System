@@ -26,7 +26,7 @@ The Flight Ranking System is a web application that generates optimized flight r
 
 2. **Data Filtering**:
 
-   - The backend fetches flight data from the MySQL database based on the user's selected departure time, destination city, departure city, and date with a time buffer.
+   - The backend fetches flight data from the MySQL database(Running on Local- I can make it on all systems if given more than 15 hours) based on the user's selected departure time, destination city, departure city, and date with a time buffer.
 
 3. **Scoring Logic**:
 
@@ -49,13 +49,14 @@ The Flight Ranking System is a web application that generates optimized flight r
 - **Arrival Time Score**: Similar to departure time, flights arriving closer to the preferred arrival time receive higher scores.
 - **Preferred Airline Score**: A score of `1` is given if the flight matches the user's preferred airline, otherwise `0`.
 - **Cabin Class Score**: A score of `1` is given if the cabin class matches the user's preference, otherwise `0`.
-- **Final**: The final score is divided by 4 as the maximum of all scores(added up) is 4. This is done for normalization.
+- **Layover Score**: The layover score is calculated as `1 / Number of Layovers`
+- **Final Score**: The final score is divided by 4 as the maximum of all scores(added up) is 5. This is done for normalization.
 
 ### 2. Enterprise Preference Score Calculation
 
 - **Preferred Airline Score**: Enterprise preferences are considered by giving a score of `1` if the airline matches the enterprise's preferred airline.
 - **Price Optimization Score**: Lower-priced flights score higher. The score is calculated as `(max_price - flight_price) / (max_price - min_price)`.
-- **Final**: The final score is divided by 2 as the maximum of all scores(added up) is 2. This is done for normalization.
+- **Final Score**: The final score is divided by 2 as the maximum of all scores(added up) is 2. This is done for normalization.
 
 ### 3. Inventory Score
 
@@ -90,5 +91,3 @@ The React frontend provides a user-friendly interface to input preferences and d
 ## Conclusion
 
 The Flight Ranking System balances multiple factors to provide the most relevant flight recommendations. By dynamically adjusting to user and enterprise needs, the system ensures that the best options are always displayed.
-
-For further improvements, consider integrating caching mechanisms, support for round-trip itineraries, and real-time data from external APIs.
