@@ -2,6 +2,8 @@
 
 Demo Video: https://drive.google.com/file/d/1oO_nY7wlSonQnui7Px2eCv1xBbMX313l/view?usp=sharing
 
+- **Caching Ideas**: I can find the most searched departures times for each airport and then cache the results in Redis for faster retrieval.
+
 ## Key Features
 
 - **Dynamic Weighting System**: Balances user and enterprise preferences with real-time adjustability.
